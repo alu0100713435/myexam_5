@@ -2,10 +2,10 @@ class Examen
 	
 	attr_accessor :value, :correctas, :respuestas
 
-	def initialize value
+	def initialize value,respuestas
 		@value = value
 		@correctas = ["a","b","a","b","a"]
-		@respuestas = ["nil","nil","nil","nil","nil"]
+		@respuestas = respuestas
 	end
 
 	def to_s
@@ -26,5 +26,21 @@ class Examen
 				j+=1
 		end
 		"#{aux.value}"
+	end
+
+	def exam
+		i=0
+		k=0
+		while i<5
+			if @correctas[i] == @respuestas[i] then
+				k+=1
+			end
+			i+=1
+		end
+		if k==5 then
+			return "true"
+		else
+			return "false"
+		end
 	end
 end

@@ -2,10 +2,10 @@ class Examen
 	
 	attr_accessor :value, :correctas, :respuestas
 
-	def initialize value
+	def initialize value,respuestas
 		@value = value
 		@correctas = ["a","b","a","b","a"]
-		@respuestas = ["nil","nil","nil","nil","nil"]
+		@respuestas = respuestas
 	end
 
 	def to_s
@@ -30,18 +30,16 @@ class Examen
 
 	def exam
 		i=0
-		aux = @value.inicio
-		while i<5 do
-			puts "#{aux.value} \n\n Tu respuesta: "
-			@respuestas[i] = gets.chomp
+		k=0
+		while i<5
 			if @correctas[i] == @respuestas[i] then
-					puts "correcto"
-			else
-					puts "incorrecto"
+				k+=1
 			end
-			aux = aux.next
-			i+=1
-		end	
+		end
+		if k==5 then
+			return "true"
+		else
+			return "false"
+		end
 	end
-	
 end

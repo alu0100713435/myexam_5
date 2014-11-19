@@ -22,7 +22,8 @@ describe SeleccionSimple do
 		@lista.push_final(@node4)
 		@lista.push_final(@node5)
 	
-		@exa = Examen.new(@lista)
+		@exa = Examen.new(@lista,["a","b","a","b","a"])
+		@exa1 = Examen.new(@lista,["a","b","a","b","c"])
 	end
 
 	describe "Examen" do
@@ -38,11 +39,16 @@ describe SeleccionSimple do
 		end
 
 		it "Comprobar soluciones" do
-			expect(@exa.correctas[0]).to eq("a")
-			expect(@exa.correctas[1]).to eq("b")	
-			expect(@exa.correctas[2]).to eq("a")	
-			expect(@exa.correctas[3]).to eq("b")	
-			expect(@exa.correctas[4]).to eq("a")		
+			expect(@exa.correctas[0]).to eq(@exa.respuestas[0])
+			expect(@exa.correctas[1]).to eq(@exa.respuestas[1])	
+			expect(@exa.correctas[2]).to eq(@exa.respuestas[2])	
+			expect(@exa.correctas[3]).to eq(@exa.respuestas[3])	
+			expect(@exa.correctas[4]).to eq(@exa.respuestas[4])		
+		end
+
+		it "Interfaz de usuario" do
+			expect(@exa.exam).to eq("true")
+			expect(@exa1.exam).to eq("false")
 		end
 
 	end
