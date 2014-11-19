@@ -1,6 +1,6 @@
-#require "./myexam_5.rb"
-#require "./myexam_5.1.rb"
-#require "./myexam_5.2.rb"
+require "./myexam_5.rb"
+require "./myexam_5.1.rb"
+require "./myexam_5.2.rb"
 
 class Preguntas
 	

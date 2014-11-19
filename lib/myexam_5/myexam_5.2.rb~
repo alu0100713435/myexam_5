@@ -27,4 +27,21 @@ class Examen
 		end
 		"#{aux.value}"
 	end
+
+	def exam
+		i=0
+		aux = @value.inicio
+		while i<5 do
+			puts "#{aux.value} \n\n Tu respuesta: "
+			@respuestas[i] = gets.chomp
+			if @correctas[i] == @respuestas[i] then
+					puts "correcto"
+			else
+					puts "incorrecto"
+			end
+			aux = aux.next
+			i+=1
+		end	
+	end
+	
 end

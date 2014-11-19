@@ -27,6 +27,10 @@ describe SeleccionSimple do
 
 	describe "Examen" do
 
+		it "Comprobar clase examen" do
+			expect(@exa.class).to eq(Examen)
+		end
+
 		it "Mostrar examen" do
 			expect(@exa.mostrar(2)).to eq(@lista.mostrar(2))
 			expect(@exa.mostrar(2)).to eq(@lista.mostrar(2))
